@@ -61,7 +61,7 @@ async function run() {
         app.post('/login', async(req, res) => {
             const user = req.body;
             const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-                expiresIn: '10d'
+                expiresIn: '1d'
             });
 
             res.send({accessToken})
@@ -161,6 +161,14 @@ async function run() {
 
     }
 };
+
+
+
+// for test live server
+
+app.get('/hero', (req, res) => {
+    res.send('Hero meets heroku!')
+})
 
 run().catch(console.dir);
 
