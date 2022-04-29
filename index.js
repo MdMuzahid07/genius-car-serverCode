@@ -167,8 +167,11 @@ async function run() {
 // for test live server
 
 app.get('/hero', (req, res) => {
-    res.send('Hero meets heroku!')
+    res.send('is server ok?')
 })
+
+
+//------------------------------------------
 
 run().catch(console.dir);
 
